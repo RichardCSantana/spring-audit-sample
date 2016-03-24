@@ -1,0 +1,15 @@
+spring:
+    jpa:
+        database: POSTGRESQL
+        show-sql: true
+        hibernate.ddl-auto: create
+    datasource:
+        platform: postgres
+        driverClassName: org.postgresql.Driver
+        url: jdbc:postgresql://localhost/audit
+        username: postgres
+        password: mysecretpassword
+security:
+    user:
+      name: audit
+      password: audit
