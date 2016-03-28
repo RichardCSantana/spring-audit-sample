@@ -6,9 +6,9 @@ spring:
     datasource:
         platform: postgres
         driverClassName: org.postgresql.Driver
-        url: jdbc:postgresql://localhost/audit
-        username: postgres
-        password: mysecretpassword
+        url: jdbc:postgresql://db/audit
+        username: docker
+        password: docker
 security:
     user:
       name: audit
