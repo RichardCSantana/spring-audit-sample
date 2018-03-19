@@ -1,7 +1,10 @@
 package com.richardcsantana.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -10,7 +13,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
+import java.time.ZonedDateTime;
 
 /**
  * Created by richardsantana on 23/03/16.
@@ -20,11 +23,11 @@ import java.util.Date;
 @EqualsAndHashCode
 @ToString
 @NoArgsConstructor
-@Table(name="dado")
+@Table(name = "dado")
 @EntityListeners(AuditingEntityListener.class)
-public class Dado implements Serializable{
+public class Dado implements Serializable {
 
-    public Dado(String teste){
+    public Dado(String teste) {
         this.teste = teste;
     }
 
@@ -45,9 +48,9 @@ public class Dado implements Serializable{
 
     @CreatedDate
     @JsonIgnore
-    private Date createdDateTime;
+    private ZonedDateTime createdDateTime;
 
     @LastModifiedDate
     @JsonIgnore
-    private Date modifiedDateTime;
+    private ZonedDateTime modifiedDateTime;
 }
